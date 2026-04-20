@@ -85,10 +85,10 @@ const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab }) =>
         <div className="flex flex-col h-full p-6">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-primary-600 rounded-lg text-white">
+              <div className="p-2 bg-gradient-to-br from-primary-500 to-indigo-600 rounded-lg text-white shadow-lg">
                 <CreditCard size={24} />
               </div>
-              <h1 className="text-xl font-bold tracking-tight">SmartExp</h1>
+              <h1 className="text-xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">SmartExp Pro</h1>
             </div>
             <button className="lg:hidden" onClick={() => setIsSidebarOpen(false)}>
               <X size={24} />
@@ -141,8 +141,8 @@ const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab }) =>
             <Menu size={24} />
           </button>
           <div className="flex items-center gap-2">
-            <CreditCard className="text-primary-600" size={24} />
-            <h1 className="text-lg font-bold">SmartExp</h1>
+            <CreditCard className="text-indigo-600" size={24} />
+            <h1 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">SmartExp Pro</h1>
           </div>
           <div className="w-10"></div> {/* Spacer for symmetry */}
         </header>
