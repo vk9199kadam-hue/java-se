@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Plus, 
   Settings2, 
   Tag as TagIcon, 
-  DollarSign, 
+  IndianRupee, 
   Trash2
 } from 'lucide-react';
 import { useCategories } from '../hooks/useCategories';
@@ -17,6 +17,10 @@ const CategoryManager: React.FC = () => {
   
   const [isAdding, setIsAdding] = useState(false);
   const [newTotalBudget, setNewTotalBudget] = useState(totalMonthlyBudget.toString());
+
+  useEffect(() => {
+    setNewTotalBudget(totalMonthlyBudget.toString());
+  }, [totalMonthlyBudget]);
 
   const handleUpdateTotalBudget = async () => {
     const val = parseFloat(newTotalBudget);
@@ -40,7 +44,7 @@ const CategoryManager: React.FC = () => {
         </div>
         <div className="flex gap-2 w-full md:w-auto">
           <div className="relative flex-1">
-            <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+            <IndianRupee className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
             <input 
               type="number"
               className="input-field pl-9"
@@ -90,6 +94,17 @@ const CategoryCard = ({ category, onUpdate, onDelete }: any) => {
     keywords: category.keywords.join(', '),
     color: category.color
   });
+
+  useEffect(() => {
+    if (!isEditing) {
+      setEditData({
+        name: category.name,
+        budget: category.budget.toString(),
+        keywords: category.keywords.join(', '),
+        color: category.color
+      });
+    }
+  }, [category, isEditing]);
 
   const handleSave = async () => {
     await onUpdate(category.id, {
@@ -165,7 +180,7 @@ const CategoryCard = ({ category, onUpdate, onDelete }: any) => {
       </div>
       <div className="space-y-3">
         <div className="flex items-center gap-2 text-slate-500">
-          <DollarSign size={14} className="text-primary-500" />
+          <IndianRupee size={14} className="text-primary-500" />
           <span className="text-sm font-medium">Budget: {formatCurrency(category.budget)}</span>
         </div>
         <div className="space-y-1">

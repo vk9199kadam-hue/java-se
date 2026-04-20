@@ -92,7 +92,7 @@ const ExpenseForm: React.FC<ExpenseFormProps> = ({ onClose, editExpense }) => {
           <div className="space-y-2">
             <label className="text-sm font-medium text-slate-500">Amount</label>
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-slate-400">$</span>
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 font-bold text-slate-400">₹</span>
               <input
                 type="number"
                 step="0.01"
