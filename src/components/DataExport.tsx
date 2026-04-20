@@ -6,7 +6,6 @@ import {
   FileSpreadsheet, 
   AlertCircle,
   CheckCircle2,
-  Database,
   History,
   ShieldCheck,
   ShieldAlert

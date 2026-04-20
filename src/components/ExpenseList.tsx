@@ -1,18 +1,14 @@
 import React, { useState, useMemo } from 'react';
 import { 
   Search, 
-  Filter, 
   Trash2, 
   Edit2, 
-  ChevronDown, 
   Calendar,
-  MoreVertical,
-  Briefcase,
   Plus
 } from 'lucide-react';
 import { useExpenses } from '../hooks/useExpenses';
 import { useCategories } from '../hooks/useCategories';
-import { format, isToday, isYesterday, isWithinInterval, subDays, startOfToday, startOfWeek, endOfWeek } from 'date-fns';
+import { format, isToday, isYesterday, isWithinInterval, startOfToday, startOfWeek, endOfWeek } from 'date-fns';
 import { formatCurrency } from '../utils/validators';
 import ExpenseForm from './ExpenseForm';
 import { toast } from 'react-hot-toast';
@@ -39,7 +35,6 @@ const ExpenseList: React.FC = () => {
   const groupedExpenses = useMemo(() => {
     const groups: { [key: string]: any[] } = {};
     const today = startOfToday();
-    const yesterday = subDays(today, 1);
     const thisWeek = { start: startOfWeek(today), end: endOfWeek(today) };
 
     filteredExpenses.forEach(exp => {

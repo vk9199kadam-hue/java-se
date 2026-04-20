@@ -1,5 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { db, Expense } from '../db';
+import { db } from '../db';
+import type { Expense } from '../db';
 import { startOfMonth, endOfMonth, isWithinInterval } from 'date-fns';
 
 export const useExpenses = () => {

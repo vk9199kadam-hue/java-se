@@ -1,4 +1,4 @@
-import { Category } from '../db';
+import type { Category } from '../db';
 
 /**
  * Auto-categorize an expense based on its description using keyword matching.

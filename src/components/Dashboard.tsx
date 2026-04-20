@@ -23,7 +23,6 @@ import { motion } from 'framer-motion';
 import { useBudget } from '../hooks/useBudget';
 import { useExpenses } from '../hooks/useExpenses';
 import { format, subMonths, startOfMonth, endOfMonth, isWithinInterval } from 'date-fns';
-import { Trash2 } from 'lucide-react';
 import { formatCurrency } from '../utils/validators';
 
 ChartJS.register(

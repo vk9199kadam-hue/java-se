@@ -1,5 +1,6 @@
 import { useLiveQuery } from 'dexie-react-hooks';
-import { db, Category } from '../db';
+import { db } from '../db';
+import type { Category } from '../db';
 
 export const useCategories = () => {
   const categories = useLiveQuery(() => db.categories.toArray()) || [];

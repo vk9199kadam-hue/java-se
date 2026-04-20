@@ -4,10 +4,7 @@ import {
   Settings2, 
   Tag as TagIcon, 
   DollarSign, 
-  Trash2, 
-  Check, 
-  X,
-  Palette
+  Trash2
 } from 'lucide-react';
 import { useCategories } from '../hooks/useCategories';
 import { useBudget } from '../hooks/useBudget';
@@ -19,7 +16,6 @@ const CategoryManager: React.FC = () => {
   const { updateSetting, totalMonthlyBudget } = useBudget();
   
   const [isAdding, setIsAdding] = useState(false);
-  const [editingId, setEditingId] = useState<number | null>(null);
   const [newTotalBudget, setNewTotalBudget] = useState(totalMonthlyBudget.toString());
 
   const handleUpdateTotalBudget = async () => {
@@ -79,7 +75,7 @@ const CategoryManager: React.FC = () => {
       {isAdding && (
          <AddCategoryModal 
           onClose={() => setIsAdding(false)} 
-          onAdd={(cat) => addCategory(cat).then(() => { toast.success('Category added'); setIsAdding(false); })}
+          onAdd={(cat: any) => addCategory(cat).then(() => { toast.success('Category added'); setIsAdding(false); })}
         />
       )}
     </div>

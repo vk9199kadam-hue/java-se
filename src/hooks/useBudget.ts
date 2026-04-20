@@ -2,7 +2,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '../db';
 import { useExpenses } from './useExpenses';
 import { useCategories } from './useCategories';
-import { startOfMonth, endOfMonth, isWithinInterval, differenceInDays, startOfDay } from 'date-fns';
+import { startOfMonth, endOfMonth, isWithinInterval, differenceInDays } from 'date-fns';
 
 export const useBudget = () => {
   const { expenses } = useExpenses();

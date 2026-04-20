@@ -1,4 +1,3 @@
-import { Expense, Category } from '../db';
 
 export const validateBackupData = (data: any): boolean => {
   if (!data || typeof data !== 'object') return false;

@@ -1,4 +1,4 @@
-import { db, Expense, Category } from '../db';
+import { db } from '../db';
 import { validateBackupData } from './validators';
 import { format } from 'date-fns';
 

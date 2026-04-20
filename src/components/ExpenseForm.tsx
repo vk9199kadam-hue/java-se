@@ -3,7 +3,7 @@ import { X, Plus, Sparkles, AlertTriangle } from 'lucide-react';
 import { useExpenses } from '../hooks/useExpenses';
 import { useCategories } from '../hooks/useCategories';
 import { autoCategorize } from '../utils/categorizer';
-import { Expense } from '../db';
+import type { Expense } from '../db';
 import { format, isAfter, startOfToday } from 'date-fns';
 import { toast } from 'react-hot-toast';
 
